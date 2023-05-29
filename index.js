@@ -1,3 +1,12 @@
+//Contact Us Actions
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+//cart actions
 document.addEventListener("DOMContentLoaded", function () {
   const cartOverlay = document.querySelector(".cart-overlay");
   const cartBtn = document.querySelector(".fa-shopping-cart");
@@ -55,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p>Price: <span class="product-price-innerCart"></span>${price}$</p>
       </div>
     </div>
+    <br>
       `;
      cartContent.insertAdjacentHTML('beforeend', results);
     }
@@ -63,9 +73,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   
   function clearCart() {
-    cartItems = []; // Empty the cartItems array
-    cartContent.innerHTML = ""; // Clear the cart content HTML
-    updateCartTotal(); // Update the cart total to zero
+    cartItems = []; 
+    cartContent.innerHTML = "";
+    updateCartTotal(); 
   }
   
   const checkOutBtn = document.querySelector(".checkout-btn");
@@ -100,16 +110,6 @@ const checkOutBtn = document.querySelector(".checkout-btn");
 checkOutBtn.addEventListener("click", clearCart);
 
 function clearCart() {
-  // Display a success message using an alert box
   alert("Checkout completed successfully!");
-
   updateCartTotal(); // Update the cart total to zero
-}
-//Contact Us Actions
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
 }
